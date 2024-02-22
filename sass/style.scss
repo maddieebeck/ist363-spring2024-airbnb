@@ -1,3 +1,5 @@
+$color__orange: #d74100;
+
 html,
 body,
 h1,
@@ -29,7 +31,7 @@ li {
 }
 
 body {
-  background-color: #d74100;
+  background-color: $color__orange;
 }
 
 header {
@@ -122,5 +124,3 @@ nav a:focus {
   font-family: arial;
   font-size: 2rem;
 }
-
-/*# sourceMappingURL=style.css.map */

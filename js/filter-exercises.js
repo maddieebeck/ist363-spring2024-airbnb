@@ -8,7 +8,7 @@ const filteredNumbers = numbers.filter((number) => {
   return number < 10;
 }); //end of filter
 
-console.log({ filteredNumbers });
+//console.log({ filteredNumbers });
 
 //example 2
 const people = [
@@ -24,7 +24,7 @@ const filteredPeople = people.filter((person) => {
   return person.age < 30;
 });
 
-console.log({ filteredPeople });
+//console.log({ filteredPeople });
 
 //example 3
 const cars = [
@@ -40,12 +40,24 @@ const filteredCars = cars.filter((car) => {
   return car.make === 'Ford';
 }); //end of filter
 
-console.log({ filteredCars });
+//console.log({ filteredCars });
 
 //example 4
-const februaryGames = schedule.filter((game) => {
-  // write your code here
-  const dateObj = new Date(game.date); // convert the date string to a Date object
-  return dateObj.getMonth() === 1; // February is the second month, so the index is 1, January is 0, March is 2, April is 3, etc.
-});
-console.log(februaryGames);
+const filterGames = (games, monthIndex) => {
+  const filteredGames = games.filter((game) => {
+    const dateObject = new Date(game.date);
+    return dateObject.getMonth() === monthIndex;
+  });
+  console.log({ filteredGames });
+}; // end of filterGames
+
+fetch('js/schedule.json')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    filterGames(data, 1);
+  })
+  .catch();
+
+// console.log({ filterGames });
