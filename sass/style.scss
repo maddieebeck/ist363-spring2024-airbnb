@@ -1,4 +1,8 @@
+@use './header';
+@use './footer';
+
 $color__orange: #d74100;
+$font__primary: arial, sans serif;
 
 html,
 body,
@@ -34,38 +38,32 @@ body {
   background-color: $color__orange;
 }
 
-header {
-  background-color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .logo {
   width: 150px;
   height: auto;
   fill: var(--airbnb-pink);
 }
 
-nav ul {
-  display: flex;
-  gap: 1rem;
-}
-
-nav a {
-  font-family: arial;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  transition: all 0.25s;
-}
-
-nav a:hover,
-nav a:focus {
-  color: var(--airbnb-pink);
-  text-decoration: underline;
+nav {
+  ul {
+    display: flex;
+    gap: 1rem;
+    li {
+      a {
+        font-family: $font__primary;
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        transition: all 0.25s;
+        &:hover,
+        &:focus {
+          color: $color__orange;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 .btn-ui {
