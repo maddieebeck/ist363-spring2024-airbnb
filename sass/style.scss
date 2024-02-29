@@ -1,41 +1,10 @@
-@use './header';
-@use './footer';
+@use './abstracts/vars';
 
-$color__orange: #d74100;
-$font__primary: arial, sans serif;
-
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li,
-button {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+@use './base';
+@use './layout';
 
 :root {
   --airbnb-pink: #ff385c;
-}
-
-body {
-  background-color: $color__orange;
 }
 
 .logo {
@@ -50,7 +19,7 @@ nav {
     gap: 1rem;
     li {
       a {
-        font-family: $font__primary;
+        font-family: vars.$font__primary;
         font-size: 1.25rem;
         font-weight: bold;
         color: black;
@@ -58,7 +27,7 @@ nav {
         transition: all 0.25s;
         &:hover,
         &:focus {
-          color: $color__orange;
+          color: vars.$color__orange;
           text-decoration: underline;
         }
       }
