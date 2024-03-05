@@ -1,11 +1,12 @@
-/* Error: Can't find stylesheet to import.
+/* Error: expected ";".
  *   ,
- * 1 | @use './abstracts/vars';
- *   | ^^^^^^^^^^^^^^^^^^^^^^^
+ * 7 | $font__primary: arial;
+ *   |               ^
  *   '
- *   sass/layout/_header.scss 1:1  @use
- *   sass/layout/_index.scss 1:1   @use
- *   sass/style.scss 4:1           root stylesheet */
+ *   sass/abstracts/_vars.scss 7:15  @use
+ *   sass/base/_base.scss 1:1        @use
+ *   sass/base/_index.scss 2:1       @use
+ *   sass/style.scss 4:1             root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -15,5 +16,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use './abstracts/vars';\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass/layout/_header.scss 1:1  @use\a   sass/layout/_index.scss 1:1   @use\a   sass/style.scss 4:1           root stylesheet";
+  content: 'Error: expected ";".\a   \2577 \a 7 \2502  $font__primary: arial;\a   \2502                ^\a   \2575 \a   sass/abstracts/_vars.scss 7:15  @use\a   sass/base/_base.scss 1:1        @use\a   sass/base/_index.scss 2:1       @use\a   sass/style.scss 4:1             root stylesheet';
 }
